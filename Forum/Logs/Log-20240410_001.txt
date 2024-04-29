@@ -1,0 +1,74 @@
+2024-04-10 23:49:05.661 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-10 23:49:35.893 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-10 23:49:36.673 +04:00  INF  Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Forum];
+2024-04-10 23:49:36.755 +04:00  INF  Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Forum] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-04-10 23:49:36.848 +04:00  INF  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-10 23:49:36.993 +04:00  INF  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-04-10 23:49:36.996 +04:00  INF  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-10 23:49:37.027 +04:00  INF  Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-10 23:49:37.034 +04:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-10 23:49:37.059 +04:00  INF  Applying migration '20240410194905_Init'.
+2024-04-10 23:49:37.110 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [FirstName] nvarchar(50) NOT NULL,
+    [LastName] nvarchar(50) NOT NULL,
+    [Username] varchar(50) NOT NULL,
+    [Email] varchar(50) NOT NULL,
+    [Gender] bit NOT NULL,
+    [Password] varchar(50) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2024-04-10 23:49:37.126 +04:00  INF  Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Topics] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(100) NOT NULL,
+    [Content] nvarchar(1000) NOT NULL,
+    [Created] datetime NOT NULL DEFAULT (GETUTCDATE()),
+    [NumberOfComments] int NOT NULL,
+    [State] int NOT NULL,
+    [Status] int NOT NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_Topics] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Topics_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2024-04-10 23:49:37.128 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comments] (
+    [Id] int NOT NULL IDENTITY,
+    [Content] nvarchar(200) NOT NULL,
+    [UserId] int NOT NULL,
+    [TopicId] int NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Comments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comments_Topics_TopicId] FOREIGN KEY ([TopicId]) REFERENCES [Topics] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Comments_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id])
+);
+2024-04-10 23:49:37.129 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_TopicId] ON [Comments] ([TopicId]);
+2024-04-10 23:49:37.130 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_UserId] ON [Comments] ([UserId]);
+2024-04-10 23:49:37.131 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Topics_UserId] ON [Topics] ([UserId]);
+2024-04-10 23:49:37.132 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]);
+2024-04-10 23:49:37.133 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Username] ON [Users] ([Username]);
+2024-04-10 23:49:37.135 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240410194905_Init', N'6.0.28');

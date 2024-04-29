@@ -1,0 +1,585 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98468936-6614-49C3-A5E0-A34A0374A77C}|Forum.Application.Tests\\Forum.Application.Tests.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application.tests\\commentservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98468936-6614-49C3-A5E0-A34A0374A77C}|Forum.Application.Tests\\Forum.Application.Tests.csproj|solutionrelative:forum.application.tests\\commentservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\topics\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\topics\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.infrastructure\\backgroundservice\\topicarchivebackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|solutionrelative:forum.infrastructure\\backgroundservice\\topicarchivebackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\topics\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\topics\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.infrastructure\\comments\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|solutionrelative:forum.infrastructure\\comments\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.infrastructure\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|solutionrelative:forum.infrastructure\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\comments\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\comments\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|solutionrelative:forum\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\accounts\\requests\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\accounts\\requests\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\accounts\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\accounts\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.infrastructure\\backgroundservice\\unbanuserbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|solutionrelative:forum.infrastructure\\backgroundservice\\unbanuserbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum\\infrastructure\\extensions\\authextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|solutionrelative:forum\\infrastructure\\extensions\\authextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum\\infrastructure\\jwt\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|solutionrelative:forum\\infrastructure\\jwt\\jwtconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum\\infrastructure\\jwt\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B0157A-36A6-4225-8D45-FA67B31C284F}|Forum\\Forum.API.csproj|solutionrelative:forum\\infrastructure\\jwt\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.infrastructure\\uow\\commentuow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B89100-1E22-4A42-8846-5BFD168E2B7B}|Forum.Infrastructure\\Forum.Infrastructure.csproj|solutionrelative:forum.infrastructure\\uow\\commentuow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\comments\\icommentuow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\comments\\icommentuow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\accounts\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\accounts\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7ACFCE6-F3AF-4A05-BB55-53B8C5F95960}|Forum.Domain\\Forum.Domain.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7ACFCE6-F3AF-4A05-BB55-53B8C5F95960}|Forum.Domain\\Forum.Domain.csproj|solutionrelative:forum.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\accounts\\requests\\userputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\accounts\\requests\\userputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFEC4A3C-2F13-473B-BFDA-1D0202589968}|Forum.Persistence\\Forum.Persistence.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.persistence\\seed\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFEC4A3C-2F13-473B-BFDA-1D0202589968}|Forum.Persistence\\Forum.Persistence.csproj|solutionrelative:forum.persistence\\seed\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073954_update1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Forum.Persistence\\Migrations\\20240426073954_update1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073503_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Forum.Persistence\\Migrations\\20240426073503_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073023_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Forum.Persistence\\Migrations\\20240426073023_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\controllers\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\controllers\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\views\\account\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\views\\account\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\views\\topic\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\views\\topic\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A3C4E3F7-0144-484F-8AAD-BFFBBBB1D40D}|Forum.Web\\Forum.Web.csproj|solutionrelative:forum.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.application\\accounts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31A86D00-4693-4EBB-89B6-3BD0A2D26C50}|Forum.Application\\Forum.Application.csproj|solutionrelative:forum.application\\accounts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFEC4A3C-2F13-473B-BFDA-1D0202589968}|Forum.Persistence\\Forum.Persistence.csproj|c:\\users\\kiuadmin\\source\\repos\\anaavkopashvili\\forum\\forum\\forum.persistence\\migrations\\20240426074238_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFEC4A3C-2F13-473B-BFDA-1D0202589968}|Forum.Persistence\\Forum.Persistence.csproj|solutionrelative:forum.persistence\\migrations\\20240426074238_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 193,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Forum.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Forum.Web\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBwAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T11:19:34.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\Comments\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "Forum.Infrastructure\\Comments\\CommentRepository.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\Comments\\CommentRepository.cs",
+              "RelativeToolTip": "Forum.Infrastructure\\Comments\\CommentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T11:08:53.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Forum.Infrastructure\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BaseRepository.cs",
+              "RelativeToolTip": "Forum.Infrastructure\\BaseRepository.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAlwBgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T19:26:32.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TopicArchiveBackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BackgroundService\\TopicArchiveBackgroundService.cs",
+              "RelativeDocumentMoniker": "Forum.Infrastructure\\BackgroundService\\TopicArchiveBackgroundService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BackgroundService\\TopicArchiveBackgroundService.cs",
+              "RelativeToolTip": "Forum.Infrastructure\\BackgroundService\\TopicArchiveBackgroundService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwB8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:17:37.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITopicService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Topics\\ITopicService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Topics\\ITopicService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Topics\\ITopicService.cs",
+              "RelativeToolTip": "Forum.Application\\Topics\\ITopicService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAhwA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T21:12:50.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TopicService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Topics\\TopicService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Topics\\TopicService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Topics\\TopicService.cs",
+              "RelativeToolTip": "Forum.Application\\Topics\\TopicService.cs",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAWwI4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T19:23:21.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommentServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application.Tests\\CommentServiceTests.cs",
+              "RelativeDocumentMoniker": "Forum.Application.Tests\\CommentServiceTests.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application.Tests\\CommentServiceTests.cs",
+              "RelativeToolTip": "Forum.Application.Tests\\CommentServiceTests.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwEEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T09:13:29.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Forum\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Forum\\Controllers\\CommentController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T11:07:34.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegistrationRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\Requests\\RegistrationRequestModel.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Accounts\\Requests\\RegistrationRequestModel.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\Requests\\RegistrationRequestModel.cs",
+              "RelativeToolTip": "Forum.Application\\Accounts\\Requests\\RegistrationRequestModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:32:55.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Forum.Web\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Forum.Web\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAswBsAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T18:58:14.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Forum.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Forum.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAowI8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T18:18:54.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\UserService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Accounts\\UserService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\UserService.cs",
+              "RelativeToolTip": "Forum.Application\\Accounts\\UserService.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAUwCUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T18:20:04.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CommentService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Comments\\CommentService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Comments\\CommentService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Comments\\CommentService.cs",
+              "RelativeToolTip": "Forum.Application\\Comments\\CommentService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwDcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:55:27.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Forum.Web\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Forum.Web\\Controllers\\CommentController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwCoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:55:19.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UnbanUserBackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BackgroundService\\UnbanUserBackgroundService.cs",
+              "RelativeDocumentMoniker": "Forum.Infrastructure\\BackgroundService\\UnbanUserBackgroundService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\BackgroundService\\UnbanUserBackgroundService.cs",
+              "RelativeToolTip": "Forum.Infrastructure\\BackgroundService\\UnbanUserBackgroundService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:16:57.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthExtension.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\Extensions\\AuthExtension.cs",
+              "RelativeDocumentMoniker": "Forum\\Infrastructure\\Extensions\\AuthExtension.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\Extensions\\AuthExtension.cs",
+              "RelativeToolTip": "Forum\\Infrastructure\\Extensions\\AuthExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T09:34:58.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JWTConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\JWT\\JWTConfiguration.cs",
+              "RelativeDocumentMoniker": "Forum\\Infrastructure\\JWT\\JWTConfiguration.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\JWT\\JWTConfiguration.cs",
+              "RelativeToolTip": "Forum\\Infrastructure\\JWT\\JWTConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T08:59:12.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "JWTHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\JWT\\JWTHelper.cs",
+              "RelativeDocumentMoniker": "Forum\\Infrastructure\\JWT\\JWTHelper.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum\\Infrastructure\\JWT\\JWTHelper.cs",
+              "RelativeToolTip": "Forum\\Infrastructure\\JWT\\JWTHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T08:59:14.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CommentUOW.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\UOW\\CommentUOW.cs",
+              "RelativeDocumentMoniker": "Forum.Infrastructure\\UOW\\CommentUOW.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Infrastructure\\UOW\\CommentUOW.cs",
+              "RelativeToolTip": "Forum.Infrastructure\\UOW\\CommentUOW.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T08:46:08.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ICommentUOW.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Comments\\ICommentUOW.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Comments\\ICommentUOW.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Comments\\ICommentUOW.cs",
+              "RelativeToolTip": "Forum.Application\\Comments\\ICommentUOW.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T08:53:39.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\AdminService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Accounts\\AdminService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\AdminService.cs",
+              "RelativeToolTip": "Forum.Application\\Accounts\\AdminService.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAEwIUAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:55:27.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Forum.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Forum.Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T19:05:59.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserPutModel.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\Requests\\UserPutModel.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Accounts\\Requests\\UserPutModel.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\Requests\\UserPutModel.cs",
+              "RelativeToolTip": "Forum.Application\\Accounts\\Requests\\UserPutModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T18:56:42.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Forum.Web\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Forum.Web\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T08:12:41.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20240426073503_update.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073503_update.cs",
+              "RelativeDocumentMoniker": "Forum.Persistence\\Migrations\\20240426073503_update.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073503_update.cs",
+              "RelativeToolTip": "Forum.Persistence\\Migrations\\20240426073503_update.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:35:03.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20240426073954_update1.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073954_update1.cs",
+              "RelativeDocumentMoniker": "Forum.Persistence\\Migrations\\20240426073954_update1.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073954_update1.cs",
+              "RelativeToolTip": "Forum.Persistence\\Migrations\\20240426073954_update1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:39:54.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20240426074238_Init.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426074238_Init.cs",
+              "RelativeDocumentMoniker": "Forum.Persistence\\Migrations\\20240426074238_Init.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426074238_Init.cs",
+              "RelativeToolTip": "Forum.Persistence\\Migrations\\20240426074238_Init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:42:38.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Seed\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "Forum.Persistence\\Seed\\DataSeeder.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Seed\\DataSeeder.cs",
+              "RelativeToolTip": "Forum.Persistence\\Seed\\DataSeeder.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAA3wDIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:34:26.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Forum.Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Forum.Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T07:45:46.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20240426073023_Init.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073023_Init.cs",
+              "RelativeDocumentMoniker": "Forum.Persistence\\Migrations\\20240426073023_Init.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Persistence\\Migrations\\20240426073023_Init.cs",
+              "RelativeToolTip": "Forum.Persistence\\Migrations\\20240426073023_Init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T07:30:24.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Account\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Forum.Web\\Views\\Account\\EditUser.cshtml",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Account\\EditUser.cshtml",
+              "RelativeToolTip": "Forum.Web\\Views\\Account\\EditUser.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAuwCsAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T18:25:20.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Forum.Web\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Forum.Web\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-25T20:28:38.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Topic\\index.cshtml",
+              "RelativeDocumentMoniker": "Forum.Web\\Views\\Topic\\index.cshtml",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Views\\Topic\\index.cshtml",
+              "RelativeToolTip": "Forum.Web\\Views\\Topic\\index.cshtml",
+              "ViewState": "AQIAABoAAAAAAAAAAAAowEcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T20:51:16.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TopicController.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\TopicController.cs",
+              "RelativeDocumentMoniker": "Forum.Web\\Controllers\\TopicController.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Web\\Controllers\\TopicController.cs",
+              "RelativeToolTip": "Forum.Web\\Controllers\\TopicController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAgwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T19:23:21.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\IUserService.cs",
+              "RelativeDocumentMoniker": "Forum.Application\\Accounts\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Kiuadmin\\source\\repos\\AnaAvkopashvili\\Forum\\Forum\\Forum.Application\\Accounts\\IUserService.cs",
+              "RelativeToolTip": "Forum.Application\\Accounts\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T18:23:01.824Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

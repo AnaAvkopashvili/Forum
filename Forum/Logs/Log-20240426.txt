@@ -1,0 +1,27 @@
+2024-04-26 11:25:40.620 +04:00  INF  staring web host
+2024-04-26 11:25:40.701 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-26 11:25:40.802 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-26 11:25:40.802 +04:00  INF  Hosting environment: Development
+2024-04-26 11:25:40.802 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-26 11:25:40.830 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-26 11:25:41.693 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 867.4447ms
+2024-04-26 11:25:41.701 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-26 11:25:41.707 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.7582ms
+2024-04-26 11:25:41.720 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-26 11:25:41.780 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.7653ms
+2024-04-26 11:25:41.882 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-26 11:25:42.101 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.2394ms
+2024-04-26 11:30:13.987 +04:00  INF  staring web host
+2024-04-26 11:30:14.066 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-26 11:30:14.156 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-26 11:30:14.156 +04:00  INF  Hosting environment: Development
+2024-04-26 11:30:14.156 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-26 11:30:14.182 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-26 11:30:14.454 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 276.2433ms
+2024-04-26 11:30:14.456 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-26 11:30:14.457 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-26 11:30:14.461 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.0595ms
+2024-04-26 11:30:14.508 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.2064ms
+2024-04-26 11:30:14.544 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-26 11:30:14.721 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.9256ms
+2024-04-26 11:30:23.476 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None

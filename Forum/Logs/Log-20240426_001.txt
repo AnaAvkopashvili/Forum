@@ -1,0 +1,144 @@
+2024-04-26 11:30:23.551 +04:00  INF  staring web host
+2024-04-26 11:30:23.634 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-26 11:30:23.728 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-26 11:30:23.728 +04:00  INF  Hosting environment: Development
+2024-04-26 11:30:23.728 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-26 11:30:23.756 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-26 11:30:24.107 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 356.2070ms
+2024-04-26 11:30:24.110 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-26 11:30:24.114 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-26 11:30:24.117 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 6.7255ms
+2024-04-26 11:30:24.179 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.8507ms
+2024-04-26 11:30:24.211 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-26 11:30:24.409 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.6855ms
+2024-04-26 11:30:52.868 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-26 11:30:53.712 +04:00  INF  Executed DbCommand (257ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Forum];
+2024-04-26 11:30:53.827 +04:00  INF  Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Forum] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-04-26 11:30:53.857 +04:00  INF  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-26 11:30:54.034 +04:00  INF  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-04-26 11:30:54.042 +04:00  INF  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-26 11:30:54.089 +04:00  INF  Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-26 11:30:54.100 +04:00  INF  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-26 11:30:54.132 +04:00  INF  Applying migration '20240426073023_Init'.
+2024-04-26 11:30:54.224 +04:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(max) NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id])
+);
+2024-04-26 11:30:54.226 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [NormalizedName] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2024-04-26 11:30:54.228 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(max) NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id])
+);
+2024-04-26 11:30:54.231 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey])
+);
+2024-04-26 11:30:54.233 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId])
+);
+2024-04-26 11:30:54.234 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(50) NOT NULL,
+    [LastName] nvarchar(50) NOT NULL,
+    [Gender] bit NULL,
+    [BanExpiration] datetime2 NULL,
+    [ProfileImageUrl] nvarchar(max) NOT NULL,
+    [UserName] nvarchar(max) NULL,
+    [NormalizedUserName] nvarchar(max) NULL,
+    [Email] nvarchar(450) NULL,
+    [NormalizedEmail] nvarchar(max) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2024-04-26 11:30:54.237 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name])
+);
+2024-04-26 11:30:54.241 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Topics] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(100) NOT NULL,
+    [Content] nvarchar(1000) NOT NULL,
+    [Created] datetime NOT NULL DEFAULT (GETUTCDATE()),
+    [NumberOfComments] int NOT NULL,
+    [State] int NOT NULL,
+    [Status] int NOT NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Topics] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Topics_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2024-04-26 11:30:54.244 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comments] (
+    [Id] int NOT NULL IDENTITY,
+    [Content] nvarchar(200) NOT NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    [TopicId] int NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [Created] datetime2 NOT NULL,
+    CONSTRAINT [PK_Comments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comments_Topics_TopicId] FOREIGN KEY ([TopicId]) REFERENCES [Topics] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Comments_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id])
+);
+2024-04-26 11:30:54.246 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_TopicId] ON [Comments] ([TopicId]);
+2024-04-26 11:30:54.246 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_UserId] ON [Comments] ([UserId]);
+2024-04-26 11:30:54.261 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Topics_UserId] ON [Topics] ([UserId]);
+2024-04-26 11:30:54.262 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]) WHERE [Email] IS NOT NULL;
+2024-04-26 11:30:54.265 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240426073023_Init', N'6.0.29');

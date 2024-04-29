@@ -1,0 +1,24 @@
+2024-04-25 12:56:39.375 +04:00  INF  staring web host
+2024-04-25 12:56:39.458 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-25 12:56:39.549 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-25 12:56:39.549 +04:00  INF  Hosting environment: Development
+2024-04-25 12:56:39.550 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-25 12:56:39.575 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-25 12:56:39.908 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 336.6033ms
+2024-04-25 12:56:39.911 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-25 12:56:39.921 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 8.7254ms
+2024-04-25 12:56:39.927 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-25 12:56:39.981 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 54.1297ms
+2024-04-25 12:56:40.079 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-25 12:56:40.282 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 203.4422ms
+2024-04-25 12:56:48.111 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/health - -
+2024-04-25 12:56:48.192 +04:00  INF  HTTP GET /api/health responded 404 in 0.5423 ms
+2024-04-25 12:56:48.197 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/health - - - 404 - - 86.0196ms
+2024-04-25 12:57:04.605 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-25 12:57:04.611 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 6.2560ms
+2024-04-25 12:57:04.635 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-25 12:57:04.636 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 1.3877ms
+2024-04-25 12:57:04.640 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-25 12:57:04.664 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.7890ms
+2024-04-25 12:57:04.803 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-25 12:57:04.816 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.5477ms

@@ -1,0 +1,351 @@
+2024-04-09 21:04:23.661 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 21:04:23.673 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 21:04:23.687 +04:00  INF  Hosting environment: Development
+2024-04-09 21:04:23.688 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 21:04:23.833 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 162.4349ms
+2024-04-09 21:04:23.841 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 21:04:23.841 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 21:04:23.845 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 3.7120ms
+2024-04-09 21:04:23.869 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.8009ms
+2024-04-09 21:04:23.996 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 21:04:24.078 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.3303ms
+2024-04-09 21:04:30.086 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic - -
+2024-04-09 21:04:30.089 +04:00  INF  Logging request from middleware
+2024-04-09 21:04:30.093 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic
+IsSeccured True
+QueryString 
+Time 4/9/2024 5:04:30 PM
+
+2024-04-09 21:04:30.094 +04:00  INF  Logging response from middleware
+2024-04-09 21:04:30.094 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 5:04:30 PM
+
+2024-04-09 21:04:30.098 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 21:04:30.114 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 21:04:30.685 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 21:04:30.686 +04:00  INF  controller is executed
+2024-04-09 21:04:31.117 +04:00  INF  Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username]
+FROM [Topics] AS [t]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-04-09 21:04:31.249 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-09 21:04:31.258 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 1140.4724ms
+2024-04-09 21:04:31.258 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 21:04:31.259 +04:00  INF  HTTP GET /api/Topic responded 200 in 1170.9420 ms
+2024-04-09 21:04:31.263 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic - - - 200 - application/json;+charset=utf-8 1177.1319ms
+2024-04-09 21:05:04.001 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/1 - -
+2024-04-09 21:05:04.002 +04:00  INF  Logging request from middleware
+2024-04-09 21:05:04.002 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic/1
+IsSeccured True
+QueryString 
+Time 4/9/2024 5:05:04 PM
+
+2024-04-09 21:05:04.002 +04:00  INF  Logging response from middleware
+2024-04-09 21:05:04.002 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 5:05:04 PM
+
+2024-04-09 21:05:04.002 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:05:04.005 +04:00  INF  Route matched with {action = "Get", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[Forum.Application.Topics.Responses.TopicResponseModel] Get(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 21:05:04.035 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 21:05:04.035 +04:00  INF  controller is executed
+2024-04-09 21:05:04.083 +04:00  INF  Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Content], [t0].[Created], [t0].[NumberOfComments], [t0].[State], [t0].[Status], [t0].[Title], [t0].[UserId], [t1].[Id], [t1].[Content], [t1].[IsDeleted], [t1].[TopicId], [t1].[UserId], [t1].[Id0], [t1].[Email], [t1].[FirstName], [t1].[Gender], [t1].[LastName], [t1].[Password], [t1].[Username]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId]
+    FROM [Topics] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[TopicId]
+ORDER BY [t0].[Id], [t1].[Id]
+2024-04-09 21:05:04.087 +04:00  INF  Executing ObjectResult, writing value of type 'Forum.Application.Topics.Responses.TopicResponseModel'.
+2024-04-09 21:05:04.088 +04:00  INF  Executed action Forum.API.Controllers.TopicController.Get (Forum.API) in 82.1535ms
+2024-04-09 21:05:04.088 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:05:04.088 +04:00  INF  HTTP GET /api/Topic/1 responded 200 in 85.9025 ms
+2024-04-09 21:05:04.088 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/1 - - - 200 - application/json;+charset=utf-8 87.2113ms
+2024-04-09 21:26:39.853 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 21:26:39.864 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 21:26:39.875 +04:00  INF  Hosting environment: Development
+2024-04-09 21:26:39.876 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 21:26:39.996 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 133.8614ms
+2024-04-09 21:26:39.998 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 21:26:39.999 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 21:26:40.000 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.5124ms
+2024-04-09 21:26:40.022 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.2816ms
+2024-04-09 21:26:40.149 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 21:26:40.215 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.7824ms
+2024-04-09 21:26:47.545 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/1 - -
+2024-04-09 21:26:47.549 +04:00  INF  Logging request from middleware
+2024-04-09 21:26:47.553 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic/1
+IsSeccured True
+QueryString 
+Time 4/9/2024 5:26:47 PM
+
+2024-04-09 21:26:47.553 +04:00  INF  Logging response from middleware
+2024-04-09 21:26:47.553 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 5:26:47 PM
+
+2024-04-09 21:26:47.557 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:26:47.574 +04:00  INF  Route matched with {action = "Get", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[Forum.Application.Topics.Responses.TopicResponseModel] Get(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 21:26:48.119 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 21:26:48.120 +04:00  INF  controller is executed
+2024-04-09 21:26:48.541 +04:00  INF  Executed DbCommand (32ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Content], [t0].[Created], [t0].[NumberOfComments], [t0].[State], [t0].[Status], [t0].[Title], [t0].[UserId], [t1].[Id], [t1].[Content], [t1].[IsDeleted], [t1].[TopicId], [t1].[UserId], [t1].[Id0], [t1].[Email], [t1].[FirstName], [t1].[Gender], [t1].[LastName], [t1].[Password], [t1].[Username]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId]
+    FROM [Topics] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[TopicId]
+ORDER BY [t0].[Id], [t1].[Id]
+2024-04-09 21:26:48.669 +04:00  INF  Executing ObjectResult, writing value of type 'Forum.Application.Topics.Responses.TopicResponseModel'.
+2024-04-09 21:26:48.678 +04:00  INF  Executed action Forum.API.Controllers.TopicController.Get (Forum.API) in 1101.1824ms
+2024-04-09 21:26:48.678 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:26:48.679 +04:00  INF  HTTP GET /api/Topic/1 responded 200 in 1131.2114 ms
+2024-04-09 21:26:48.682 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/1 - - - 200 - application/json;+charset=utf-8 1136.8921ms
+2024-04-09 21:28:45.681 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 21:28:45.692 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 21:28:45.703 +04:00  INF  Hosting environment: Development
+2024-04-09 21:28:45.703 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 21:28:45.827 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 137.3369ms
+2024-04-09 21:28:45.833 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 21:28:45.833 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 21:28:45.835 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.2095ms
+2024-04-09 21:28:45.857 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.7718ms
+2024-04-09 21:28:45.880 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 21:28:45.944 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 64.0513ms
+2024-04-09 21:28:57.719 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic - -
+2024-04-09 21:28:57.722 +04:00  INF  Logging request from middleware
+2024-04-09 21:28:57.726 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic
+IsSeccured True
+QueryString 
+Time 4/9/2024 5:28:57 PM
+
+2024-04-09 21:28:57.726 +04:00  INF  Logging response from middleware
+2024-04-09 21:28:57.727 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 5:28:57 PM
+
+2024-04-09 21:28:57.730 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 21:28:57.747 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 21:28:58.276 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 21:28:58.277 +04:00  INF  controller is executed
+2024-04-09 21:28:58.707 +04:00  INF  Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username]
+FROM [Topics] AS [t]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [t0].[Id]
+2024-04-09 21:28:58.845 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-09 21:28:58.855 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 1104.5424ms
+2024-04-09 21:28:58.856 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 21:28:58.857 +04:00  INF  HTTP GET /api/Topic responded 200 in 1135.6118 ms
+2024-04-09 21:28:58.861 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic - - - 200 - application/json;+charset=utf-8 1141.9757ms
+2024-04-09 21:37:04.705 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/1 - -
+2024-04-09 21:37:04.706 +04:00  INF  Logging request from middleware
+2024-04-09 21:37:04.706 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic/1
+IsSeccured True
+QueryString 
+Time 4/9/2024 5:37:04 PM
+
+2024-04-09 21:37:04.706 +04:00  INF  Logging response from middleware
+2024-04-09 21:37:04.706 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 5:37:04 PM
+
+2024-04-09 21:37:04.706 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:37:04.711 +04:00  INF  Route matched with {action = "Get", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[Forum.Application.Topics.Responses.TopicResponseModel] Get(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 21:37:04.736 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 21:37:04.736 +04:00  INF  controller is executed
+2024-04-09 21:37:04.781 +04:00  INF  Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Content], [t0].[Created], [t0].[NumberOfComments], [t0].[State], [t0].[Status], [t0].[Title], [t0].[UserId], [t1].[Id], [t1].[Content], [t1].[IsDeleted], [t1].[TopicId], [t1].[UserId], [t1].[Id0], [t1].[Email], [t1].[FirstName], [t1].[Gender], [t1].[LastName], [t1].[Password], [t1].[Username]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId]
+    FROM [Topics] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[TopicId]
+ORDER BY [t0].[Id], [t1].[Id]
+2024-04-09 21:37:04.785 +04:00  INF  Executing ObjectResult, writing value of type 'Forum.Application.Topics.Responses.TopicResponseModel'.
+2024-04-09 21:37:04.786 +04:00  INF  Executed action Forum.API.Controllers.TopicController.Get (Forum.API) in 75.2392ms
+2024-04-09 21:37:04.786 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.Get (Forum.API)'
+2024-04-09 21:37:04.786 +04:00  INF  HTTP GET /api/Topic/1 responded 200 in 80.3597 ms
+2024-04-09 21:37:04.786 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/1 - - - 200 - application/json;+charset=utf-8 81.0425ms
+2024-04-09 21:46:12.115 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 21:46:12.135 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 21:46:12.154 +04:00  INF  Hosting environment: Development
+2024-04-09 21:46:12.154 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 21:46:12.288 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 157.7514ms
+2024-04-09 21:46:12.293 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 21:46:12.293 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 21:46:12.295 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 1.9112ms
+2024-04-09 21:46:12.316 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.6701ms
+2024-04-09 21:46:12.399 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 21:46:12.466 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 66.9859ms
+2024-04-09 21:54:14.304 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 21:54:14.315 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 21:54:14.326 +04:00  INF  Hosting environment: Development
+2024-04-09 21:54:14.326 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 21:54:14.456 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 142.2690ms
+2024-04-09 21:54:14.459 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 21:54:14.459 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 21:54:14.462 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.7898ms
+2024-04-09 21:54:14.487 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.5983ms
+2024-04-09 21:54:14.534 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 21:54:14.603 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.7305ms
+2024-04-09 22:05:46.188 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 22:05:46.199 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 22:05:46.212 +04:00  INF  Hosting environment: Development
+2024-04-09 22:05:46.212 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 22:05:46.339 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 142.3463ms
+2024-04-09 22:05:46.346 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 22:05:46.346 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 22:05:46.349 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 3.0094ms
+2024-04-09 22:05:46.370 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.1003ms
+2024-04-09 22:05:46.394 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 22:05:46.463 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.5871ms
+2024-04-09 22:07:07.573 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 22:07:07.586 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 22:07:07.597 +04:00  INF  Hosting environment: Development
+2024-04-09 22:07:07.598 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 22:07:07.728 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 145.3250ms
+2024-04-09 22:07:07.730 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 22:07:07.730 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 22:07:07.732 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.5623ms
+2024-04-09 22:07:07.754 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.3466ms
+2024-04-09 22:07:07.776 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 22:07:07.844 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.8131ms
+2024-04-09 22:07:21.046 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 22:07:21.058 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 22:07:21.070 +04:00  INF  Hosting environment: Development
+2024-04-09 22:07:21.070 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 22:07:21.196 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 139.5202ms
+2024-04-09 22:07:21.197 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 22:07:21.197 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 22:07:21.199 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.2502ms
+2024-04-09 22:07:21.222 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.7760ms
+2024-04-09 22:07:21.251 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 22:07:21.338 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.5557ms
+2024-04-09 22:08:51.045 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 22:08:51.058 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 22:08:51.074 +04:00  INF  Hosting environment: Development
+2024-04-09 22:08:51.074 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 22:08:51.220 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 165.1696ms
+2024-04-09 22:08:51.222 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 22:08:51.222 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 22:08:51.224 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.2782ms
+2024-04-09 22:08:51.249 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.0822ms
+2024-04-09 22:08:51.277 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 22:08:51.361 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.7106ms
+2024-04-09 22:09:02.738 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-09 22:09:02.749 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-09 22:09:02.760 +04:00  INF  Hosting environment: Development
+2024-04-09 22:09:02.760 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-09 22:09:02.884 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 137.1604ms
+2024-04-09 22:09:02.885 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-09 22:09:02.885 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-09 22:09:02.887 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.1490ms
+2024-04-09 22:09:02.908 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.8269ms
+2024-04-09 22:09:02.928 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-09 22:09:02.998 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.6164ms
+2024-04-09 22:18:16.982 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic - -
+2024-04-09 22:18:16.985 +04:00  INF  Logging request from middleware
+2024-04-09 22:18:16.990 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic
+IsSeccured True
+QueryString 
+Time 4/9/2024 6:18:16 PM
+
+2024-04-09 22:18:16.990 +04:00  INF  Logging response from middleware
+2024-04-09 22:18:16.990 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/9/2024 6:18:16 PM
+
+2024-04-09 22:18:16.994 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 22:18:17.011 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-09 22:18:17.531 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-09 22:18:17.532 +04:00  INF  controller is executed
+2024-04-09 22:18:17.978 +04:00  INF  Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username]
+FROM [Topics] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[Email], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[Password], [u0].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [u].[Id], [t0].[Id]
+2024-04-09 22:18:18.108 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-09 22:18:18.116 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 1101.5538ms
+2024-04-09 22:18:18.116 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-09 22:18:18.118 +04:00  INF  HTTP GET /api/Topic responded 200 in 1132.4099 ms
+2024-04-09 22:18:18.121 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic - - - 200 - application/json;+charset=utf-8 1138.6953ms

@@ -1,0 +1,120 @@
+﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using Forum.Application.Topics;
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Forum.Application.Topics.Responses.TopicResponseModel>
+
+
+<h1>Topics</h1>
+
+<form asp-controller="Topic" asp-action="SearchEmail" method="post">
+    <div class="searchEmail">
+        <input type="text" name="searchQuery" class="searchBar" placeholder="Search by Email" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+
+@if (User.IsInRole("Admin") || User.IsInRole("User"))
+{
+    <div class="btn-default">
+        <a asp-action="Create" class="btn btn-primary">Add Topic</a>
+    </div>
+}
+
+
+<table class="table table-hover" id="ForumIndexTable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Number of Comments</th>
+            <th>Author</th>
+            <th>Created</th>
+            @if (User.IsInRole("User"))
+            {
+                <th>Add Comment</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Topic" asp-action="Details" asp-route-id="@t.Id">@t.Title</a>
+                </td>
+                <td>
+                    @t.Content
+                </td>
+                <td>
+                    @t.NumberOfComments
+                </td>
+                <td>
+                    @t.UserUserName
+                </td>
+                <td>
+                    @t.Created
+                </td>
+
+                @if (User.IsInRole("User"))
+                {
+                    <td>
+                        <a asp-controller="Comment" asp-action="Create" asp-route-topicId="@t.Id" class="btn btn-primary">Add Comment</a>
+                    </td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+ *@
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using Forum.Application.Topics.Responses
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<TopicResponseModel>
+
+<h1>Topics</h1>
+
+<form asp-controller="Topic" asp-action="SearchEmail" method="post" class="search-form mb-4">
+    <div class="input-group">
+        <input type="text" name="searchQuery" class="form-control" placeholder="Search by Email" />
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+@if (User.IsInRole("Admin") || User.IsInRole("User"))
+{
+    <div class="add-topic-button mb-4">
+        <a asp-action="Create" class="btn btn-primary">Add Topic</a>
+    </div>
+}
+
+<div class="row">
+    @foreach (var topic in Model)
+    {
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <h5 class="card-title">
+                        <a asp-controller="Topic" asp-action="Details" asp-route-id="@topic.Id" class="card-link">@topic.Title</a>
+                    </h5>
+                    <p class="card-text">@topic.Content</p>
+                    <p class="card-text">@topic.NumberOfComments Replies</p>
+                    <p class="card-text"><strong>Author:</strong> @topic.UserUserName</p>
+                    <p class="card-text"><strong>Created:</strong> @topic.Created</p>
+                    @if (User.IsInRole("User"))
+                    {
+                        <a href="@Url.Action("Create", "Comment", new { topicId = topic.Id })" class="btn btn-primary">Add Comment</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

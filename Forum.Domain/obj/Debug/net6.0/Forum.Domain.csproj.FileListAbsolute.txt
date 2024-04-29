@@ -1,0 +1,13 @@
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\bin\Debug\net6.0\Forum.Domain.deps.json
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\bin\Debug\net6.0\Forum.Domain.dll
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\bin\Debug\net6.0\Forum.Domain.pdb
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.csproj.AssemblyReference.cache
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.AssemblyInfoInputs.cache
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.AssemblyInfo.cs
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.sourcelink.json
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.dll
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\refint\Forum.Domain.dll
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\Forum.Domain.pdb
+C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Domain\obj\Debug\net6.0\ref\Forum.Domain.dll

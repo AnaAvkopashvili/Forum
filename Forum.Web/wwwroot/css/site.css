@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.userProfileImage {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    background-size: 100%;
+}
+
+.userProfileImageSmall {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    background-size: 100%;
+    margin-left: 10px; /* Adjust as needed */
+    border-radius: 50%; /* Ensure the image is circular */
+}
+
+.user-info-container {
+    display: flex;
+}
+
+.icon-container {
+    display: flex;
+}
+
+.icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    background-size: 100%;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.search-form {
+    margin-bottom: 20px;
+}
+
+.add-topic-button {
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+.card-title {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+      background-color: #0056b3;
+        border-color: #0056b3;
+}
+.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+
+

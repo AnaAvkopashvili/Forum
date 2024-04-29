@@ -1,0 +1,40 @@
+﻿@using Forum.Application.Accounts.Responses
+@model List<AdminResponseModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Users</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Action</th>
+            <th>Ban</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@string.Join(" , ", user.Roles.ToList())</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Admin" asp-action="Manage" asp-route-userId="@user.Id">Manage Roles</a>
+                </td>
+                <td>
+                    @if(user.BanExpiration == null)
+                    {
+                         <a class="btn btn-danger" asp-controller="Admin" asp-action="BanUser" asp-route-userId="@user.Id">Ban</a>
+                    }
+                    else
+                    {
+                         <span>No action available</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,460 @@
+2024-04-21 00:04:08.082 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:04:08.517 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:04:08.517 +04:00  INF  Hosting environment: Development
+2024-04-21 00:04:08.517 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:04:08.572 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:04:09.205 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:04:09.207 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 643.4939ms
+2024-04-21 00:04:09.208 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:04:09.231 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 21.2843ms
+2024-04-21 00:04:09.336 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 128.1315ms
+2024-04-21 00:04:09.388 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:04:09.690 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 301.2178ms
+2024-04-21 00:04:30.057 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/login application/json 86
+2024-04-21 00:04:30.497 +04:00  INF  Logging request from middleware
+2024-04-21 00:04:30.507 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Account/login
+IsSeccured True
+QueryString 
+Time 4/20/2024 8:04:30 PM
+
+2024-04-21 00:04:30.508 +04:00  INF  Logging response from middleware
+2024-04-21 00:04:30.508 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:04:30 PM
+
+2024-04-21 00:04:30.515 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-21 00:04:30.561 +04:00  INF  Route matched with {action = "LogIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] LogIn(Forum.Application.Accounts.Requests.LoginRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-21 00:04:34.297 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-21 00:04:36.020 +04:00  INF  Executed DbCommand (146ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-21 00:04:36.504 +04:00  INF  Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2024-04-21 00:04:36.582 +04:00  INF  Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-21 00:04:36.601 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2024-04-21 00:04:36.629 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2024-04-21 00:04:36.648 +04:00  INF  AuthenticationScheme: Identity.Application signed in.
+2024-04-21 00:04:36.667 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2024-04-21 00:04:36.704 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [UserRoles] AS [u]
+WHERE ([u].[UserId] = @__p_0) AND ([u].[RoleId] = @__p_1)
+2024-04-21 00:04:36.715 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-21 00:04:36.719 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-21 00:04:36.870 +04:00  INF  Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:04:36.883 +04:00  INF  Executed action Forum.API.Controllers.AccountController.LogIn (Forum.API) in 6312.0547ms
+2024-04-21 00:04:36.886 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-21 00:04:36.894 +04:00  INF  HTTP POST /api/Account/login responded 200 in 6395.4220 ms
+2024-04-21 00:04:36.917 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/login application/json 86 - 200 - text/plain;+charset=utf-8 6859.6833ms
+2024-04-21 00:05:08.471 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAll - -
+2024-04-21 00:05:08.492 +04:00  INF  Logging request from middleware
+2024-04-21 00:05:08.493 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic/GetAll
+IsSeccured True
+QueryString 
+Time 4/20/2024 8:05:08 PM
+
+2024-04-21 00:05:08.493 +04:00  INF  Logging response from middleware
+2024-04-21 00:05:08.493 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:05:08 PM
+
+2024-04-21 00:05:08.493 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-21 00:05:08.499 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-21 00:05:08.564 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-21 00:05:08.565 +04:00  INF  controller is executed
+2024-04-21 00:05:10.513 +04:00  INF  Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM [Topics] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[AccessFailedCount], [u0].[ConcurrencyStamp], [u0].[Email], [u0].[EmailConfirmed], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[LockoutEnabled], [u0].[LockoutEnd], [u0].[NormalizedEmail], [u0].[NormalizedUserName], [u0].[PasswordHash], [u0].[PhoneNumber], [u0].[PhoneNumberConfirmed], [u0].[SecurityStamp], [u0].[TwoFactorEnabled], [u0].[UserName]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [u].[Id], [t0].[Id]
+2024-04-21 00:05:10.806 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:05:10.822 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 2322.2622ms
+2024-04-21 00:05:10.822 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-21 00:05:10.822 +04:00  INF  HTTP GET /api/Topic/GetAll responded 200 in 2330.2358 ms
+2024-04-21 00:05:10.823 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAll - - - 200 - application/json;+charset=utf-8 2351.6382ms
+2024-04-21 00:05:19.800 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:05:19.828 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:05:19.834 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:05:19.835 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 34.9969ms
+2024-04-21 00:05:19.853 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:05:19.854 +04:00  INF  Logging request from middleware
+2024-04-21 00:05:19.854 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /Account/AccessDenied
+IsSeccured True
+QueryString ?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin
+Time 4/20/2024 8:05:19 PM
+
+2024-04-21 00:05:19.854 +04:00  INF  Logging response from middleware
+2024-04-21 00:05:19.854 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:05:19 PM
+
+2024-04-21 00:05:19.854 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 0.3121 ms
+2024-04-21 00:05:19.855 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 2.1756ms
+2024-04-21 00:17:54.443 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:17:54.512 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:17:54.512 +04:00  INF  Hosting environment: Development
+2024-04-21 00:17:54.512 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:17:54.525 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:17:54.651 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 127.3717ms
+2024-04-21 00:17:54.653 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:17:54.655 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:17:54.656 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.9792ms
+2024-04-21 00:17:54.682 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.8457ms
+2024-04-21 00:17:54.713 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:17:54.802 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.9084ms
+2024-04-21 00:18:09.332 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:18:09.439 +04:00  INF  Logging request from middleware
+2024-04-21 00:18:09.443 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic/GetAllForAdmin
+IsSeccured True
+QueryString 
+Time 4/20/2024 8:18:09 PM
+
+2024-04-21 00:18:09.443 +04:00  INF  Logging response from middleware
+2024-04-21 00:18:09.444 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:18:09 PM
+
+2024-04-21 00:18:09.446 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:18:09.447 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:18:09.448 +04:00  INF  HTTP GET /api/Topic/GetAllForAdmin responded 302 in 9.0083 ms
+2024-04-21 00:18:09.451 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 119.1399ms
+2024-04-21 00:18:09.452 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:18:09.457 +04:00  INF  Logging request from middleware
+2024-04-21 00:18:09.457 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /Account/AccessDenied
+IsSeccured True
+QueryString ?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin
+Time 4/20/2024 8:18:09 PM
+
+2024-04-21 00:18:09.457 +04:00  INF  Logging response from middleware
+2024-04-21 00:18:09.457 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:18:09 PM
+
+2024-04-21 00:18:09.457 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 0.2835 ms
+2024-04-21 00:18:09.458 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 6.0514ms
+2024-04-21 00:30:01.559 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:30:01.622 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:30:01.623 +04:00  INF  Hosting environment: Development
+2024-04-21 00:30:01.623 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:30:01.634 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:30:01.745 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 112.9053ms
+2024-04-21 00:30:01.752 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:30:01.752 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:30:01.754 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.1067ms
+2024-04-21 00:30:01.774 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.2205ms
+2024-04-21 00:30:01.850 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:30:01.923 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.4982ms
+2024-04-21 00:30:05.227 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:30:05.231 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 3.8454ms
+2024-04-21 00:30:05.239 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:30:05.239 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:30:05.240 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 0.6413ms
+2024-04-21 00:30:05.247 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.1010ms
+2024-04-21 00:30:05.300 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:30:05.307 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.3943ms
+2024-04-21 00:30:15.815 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:30:15.915 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:30:15.917 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:30:15.919 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 103.9363ms
+2024-04-21 00:30:15.919 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:30:15.926 +04:00  INF  Logging request from middleware
+2024-04-21 00:30:15.930 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /Account/AccessDenied
+IsSeccured True
+QueryString ?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin
+Time 4/20/2024 8:30:15 PM
+
+2024-04-21 00:30:15.930 +04:00  INF  Logging response from middleware
+2024-04-21 00:30:15.930 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:30:15 PM
+
+2024-04-21 00:30:15.931 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 4.9187 ms
+2024-04-21 00:30:15.933 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 13.3256ms
+2024-04-21 00:32:48.006 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:32:48.165 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:32:48.165 +04:00  INF  Hosting environment: Development
+2024-04-21 00:32:48.165 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:32:48.185 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:32:48.423 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:32:48.423 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:32:48.429 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 246.1741ms
+2024-04-21 00:32:48.437 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 13.5150ms
+2024-04-21 00:32:48.487 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.0755ms
+2024-04-21 00:32:48.507 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:32:48.644 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 136.6097ms
+2024-04-21 00:33:02.589 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:33:02.766 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:33:02.769 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:33:02.772 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:33:02.772 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 183.8602ms
+2024-04-21 00:33:02.781 +04:00  INF  Logging request from middleware
+2024-04-21 00:33:02.785 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /Account/AccessDenied
+IsSeccured True
+QueryString ?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin
+Time 4/20/2024 8:33:02 PM
+
+2024-04-21 00:33:02.786 +04:00  INF  Logging response from middleware
+2024-04-21 00:33:02.786 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/20/2024 8:33:02 PM
+
+2024-04-21 00:33:02.788 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 6.3452 ms
+2024-04-21 00:33:02.792 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 19.9582ms
+2024-04-21 00:34:06.143 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:34:06.270 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:34:06.270 +04:00  INF  Hosting environment: Development
+2024-04-21 00:34:06.270 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:34:06.291 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:34:06.507 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 217.5633ms
+2024-04-21 00:34:06.507 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:34:06.517 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:34:06.521 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 12.7182ms
+2024-04-21 00:34:06.568 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.9719ms
+2024-04-21 00:34:06.591 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:34:06.714 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.1221ms
+2024-04-21 00:34:14.930 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:34:15.121 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:34:15.124 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:34:15.128 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:34:15.130 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 200.1003ms
+2024-04-21 00:34:15.139 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 0.3973 ms
+2024-04-21 00:34:15.143 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 15.2674ms
+2024-04-21 00:38:06.744 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:38:08.721 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:38:08.722 +04:00  INF  Hosting environment: Development
+2024-04-21 00:38:08.725 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:38:08.741 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:38:08.944 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 204.4950ms
+2024-04-21 00:38:08.945 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:38:08.953 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:38:08.962 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 13.8350ms
+2024-04-21 00:38:09.005 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.8989ms
+2024-04-21 00:38:09.033 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:38:09.160 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 127.0936ms
+2024-04-21 00:38:16.803 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 00:38:17.733 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-21 00:38:18.476 +04:00  INF  Executed DbCommand (69ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-04-21 00:38:18.671 +04:00  INF  Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2024-04-21 00:38:18.713 +04:00  INF  Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-21 00:38:18.722 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2024-04-21 00:38:18.737 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2024-04-21 00:38:18.752 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 00:38:18.755 +04:00  INF  AuthenticationScheme: Identity.Application was forbidden.
+2024-04-21 00:38:18.763 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 00:38:18.768 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 1964.3846ms
+2024-04-21 00:38:18.769 +04:00  INF  HTTP GET /Account/AccessDenied responded 404 in 0.4823 ms
+2024-04-21 00:38:18.770 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/AccessDenied?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 6.7828ms
+2024-04-21 00:52:24.578 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 00:52:24.733 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 00:52:24.733 +04:00  INF  Hosting environment: Development
+2024-04-21 00:52:24.733 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 00:52:24.763 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:52:25.065 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 306.4492ms
+2024-04-21 00:52:25.071 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:52:25.074 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:52:25.077 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.8799ms
+2024-04-21 00:52:25.134 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.9466ms
+2024-04-21 00:52:25.198 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:52:25.374 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.3641ms
+2024-04-21 00:52:52.974 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 00:52:52.984 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 10.6667ms
+2024-04-21 00:52:53.008 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 00:52:53.009 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 1.3773ms
+2024-04-21 00:52:53.010 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 00:52:53.034 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.9123ms
+2024-04-21 00:52:53.156 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 00:52:53.170 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.1899ms
+2024-04-21 00:53:01.018 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-21 00:53:01.269 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-21 00:53:01.310 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-21 00:53:02.500 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-21 00:53:02.502 +04:00  INF  controller is executed
+2024-04-21 00:53:03.337 +04:00  INF  Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-21 00:53:03.642 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:53:03.654 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 2337.349ms
+2024-04-21 00:53:03.655 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-21 00:53:03.658 +04:00  INF  HTTP GET /api/Comment responded 200 in 2390.8988 ms
+2024-04-21 00:53:03.665 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 2646.9770ms
+2024-04-21 01:02:19.450 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 01:02:19.746 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 01:02:19.746 +04:00  INF  Hosting environment: Development
+2024-04-21 01:02:19.746 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 01:02:19.789 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 01:02:20.301 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 01:02:20.301 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 01:02:20.310 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 529.3838ms
+2024-04-21 01:02:20.330 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 24.3555ms
+2024-04-21 01:02:20.449 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 148.2612ms
+2024-04-21 01:02:20.491 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 01:02:20.773 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 282.3613ms
+2024-04-21 12:36:15.493 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 12:36:15.656 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 12:36:15.657 +04:00  INF  Hosting environment: Development
+2024-04-21 12:36:15.657 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 12:36:15.688 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 12:36:15.995 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 311.8407ms
+2024-04-21 12:36:16.004 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 12:36:16.006 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 12:36:16.010 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.8779ms
+2024-04-21 12:36:16.058 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.9479ms
+2024-04-21 12:36:16.309 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 12:36:16.487 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 177.7137ms
+2024-04-21 12:36:20.512 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 12:36:20.575 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 12:36:20.582 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 12:36:20.585 +04:00  INF  AuthenticationScheme: Identity.Application was challenged.
+2024-04-21 12:36:20.586 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 74.6456ms
+2024-04-21 12:36:20.590 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 12:36:20.593 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 12:36:20.597 +04:00  INF  HTTP GET /Account/Login responded 404 in 0.7483 ms
+2024-04-21 12:36:20.601 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 10.8589ms
+2024-04-21 12:37:30.945 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 12:37:30.958 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 12.6773ms
+2024-04-21 12:37:30.979 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 12:37:30.980 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 1.0526ms
+2024-04-21 12:37:30.981 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 12:37:30.998 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.8433ms
+2024-04-21 12:37:31.336 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 12:37:31.347 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.1256ms
+2024-04-21 12:37:36.762 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 12:37:36.768 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 12:37:36.769 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 12:37:36.769 +04:00  INF  AuthenticationScheme: Identity.Application was challenged.
+2024-04-21 12:37:36.770 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 8.0982ms
+2024-04-21 12:37:36.775 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 12:37:36.776 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 12:37:36.776 +04:00  INF  HTTP GET /Account/Login responded 404 in 0.0101 ms
+2024-04-21 12:37:36.777 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 1.6209ms
+2024-04-21 13:09:12.164 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 13:09:12.337 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-21 13:09:12.338 +04:00  INF  Hosting environment: Development
+2024-04-21 13:09:12.338 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-21 13:09:12.368 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-21 13:09:12.689 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 327.5995ms
+2024-04-21 13:09:12.699 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-21 13:09:12.705 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.9077ms
+2024-04-21 13:09:12.710 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-21 13:09:12.760 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.0666ms
+2024-04-21 13:09:12.844 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-21 13:09:13.025 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.1413ms
+2024-04-21 13:09:17.033 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - -
+2024-04-21 13:09:17.081 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 13:09:17.087 +04:00  INF  Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-04-21 13:09:17.090 +04:00  INF  AuthenticationScheme: Identity.Application was challenged.
+2024-04-21 13:09:17.091 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic/GetAllForAdmin - - - 302 - - 58.5211ms
+2024-04-21 13:09:17.096 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - -
+2024-04-21 13:09:17.099 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-21 13:09:17.103 +04:00  INF  HTTP GET /Account/Login responded 404 in 0.6234 ms
+2024-04-21 13:09:17.106 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FTopic%2FGetAllForAdmin - - - 404 - - 10.4482ms

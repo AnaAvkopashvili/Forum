@@ -1,0 +1,80 @@
+﻿@model Forum.Application.Topics.Responses.TopicResponseModel
+@using Forum.Application.Accounts
+@inject Forum.Application.Accounts.ICurrentUserService _currentUser
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Topic</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Title:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Content:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class="col-sm-2">
+            Number of comments:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfComments)
+        </dd>
+        <dt class="col-sm-2">
+            Created:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+        <dt class="col-sm-2">
+            Username:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserUserName)
+        </dd>
+
+        <dt class="col-sm-2">
+            Comments:
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Comments != null && Model.Comments.Any())
+            {
+                <ul>
+                    @foreach (var comment in Model.Comments)
+                    {
+                        @if (!comment.IsDeleted)
+                        {
+                            <li>
+                                <strong>Comment:</strong> @comment.Content<br />
+                                <strong>Username:</strong> @comment.UserUserName<br />
+                                <strong>Created:</strong> @comment.Created<br />
+                                @if (_currentUser != null && _currentUser.GetCurrentUserId() != null && _currentUser.GetCurrentUserId().Equals(comment.UserId))
+                                {
+                                    <form asp-controller="Comment" asp-action="Delete" asp-route-id="@comment.Id" method="post">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                }
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+            else
+            {
+                <span>No comments found.</span>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+  <a asp-action="GetAll">Back to List</a>
+
+</div>

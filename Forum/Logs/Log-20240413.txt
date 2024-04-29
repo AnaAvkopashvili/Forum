@@ -1,0 +1,388 @@
+2024-04-13 12:23:01.651 +04:00  INF  Entity Framework Core 6.0.28 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-13 12:28:40.985 +04:00  INF  Entity Framework Core 6.0.28 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-13 12:28:41.325 +04:00  INF  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 12:28:41.345 +04:00  INF  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 12:28:41.347 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 12:28:41.347 +04:00  INF  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 12:28:41.356 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-13 12:28:41.366 +04:00  INF  Applying migration '20240413082301_Init'.
+2024-04-13 12:28:41.414 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(max) NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id])
+);
+2024-04-13 12:28:41.416 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [NormalizedName] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2024-04-13 12:28:41.416 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(max) NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id])
+);
+2024-04-13 12:28:41.418 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey])
+);
+2024-04-13 12:28:41.418 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId])
+);
+2024-04-13 12:28:41.419 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [FirstName] nvarchar(50) NOT NULL,
+    [LastName] nvarchar(50) NOT NULL,
+    [Gender] bit NOT NULL,
+    [UserName] nvarchar(max) NULL,
+    [NormalizedUserName] nvarchar(max) NULL,
+    [Email] nvarchar(450) NULL,
+    [NormalizedEmail] nvarchar(max) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2024-04-13 12:28:41.420 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name])
+);
+2024-04-13 12:28:41.421 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Topics] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(100) NOT NULL,
+    [Content] nvarchar(1000) NOT NULL,
+    [Created] datetime NOT NULL DEFAULT (GETUTCDATE()),
+    [NumberOfComments] int NOT NULL,
+    [State] int NOT NULL,
+    [Status] int NOT NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_Topics] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Topics_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2024-04-13 12:28:41.422 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comments] (
+    [Id] int NOT NULL IDENTITY,
+    [Content] nvarchar(200) NOT NULL,
+    [UserId] int NOT NULL,
+    [TopicId] int NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_Comments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comments_Topics_TopicId] FOREIGN KEY ([TopicId]) REFERENCES [Topics] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Comments_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id])
+);
+2024-04-13 12:28:41.455 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_TopicId] ON [Comments] ([TopicId]);
+2024-04-13 12:28:41.456 +04:00  INF  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comments_UserId] ON [Comments] ([UserId]);
+2024-04-13 12:28:41.456 +04:00  INF  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Topics_UserId] ON [Topics] ([UserId]);
+2024-04-13 12:28:41.458 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]) WHERE [Email] IS NOT NULL;
+2024-04-13 12:28:41.461 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240413082301_Init', N'6.0.28');
+2024-04-13 12:34:29.805 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 12:34:29.872 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 12:34:29.873 +04:00  INF  Hosting environment: Development
+2024-04-13 12:34:29.873 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 12:34:30.175 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 305.9658ms
+2024-04-13 12:34:30.178 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 12:34:30.182 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 3.5930ms
+2024-04-13 12:34:30.185 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 12:34:30.270 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 85.0700ms
+2024-04-13 12:34:30.292 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 12:34:30.364 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.3019ms
+2024-04-13 13:12:59.991 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 13:13:00.082 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 13:13:00.082 +04:00  INF  Hosting environment: Development
+2024-04-13 13:13:00.082 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 13:13:00.095 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 13:13:00.229 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 135.4641ms
+2024-04-13 13:13:00.231 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 13:13:00.231 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 13:13:00.234 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.4694ms
+2024-04-13 13:13:00.256 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.8652ms
+2024-04-13 13:13:00.289 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 13:13:00.369 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.0858ms
+2024-04-13 13:13:57.415 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/register application/json 182
+2024-04-13 13:13:57.505 +04:00  INF  Logging request from middleware
+2024-04-13 13:13:57.509 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Account/register
+IsSeccured True
+QueryString 
+Time 4/13/2024 9:13:57 AM
+
+2024-04-13 13:13:57.509 +04:00  INF  Logging response from middleware
+2024-04-13 13:13:57.509 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/13/2024 9:13:57 AM
+
+2024-04-13 13:13:57.511 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:13:57.529 +04:00  INF  Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task Register(Forum.Application.Accounts.Requests.RegistrationRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-13 13:13:57.534 +04:00  INF  Executed action Forum.API.Controllers.AccountController.Register (Forum.API) in 1.4103ms
+2024-04-13 13:13:57.535 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:13:57.537 +04:00  ERR  HTTP POST /api/Account/register responded 500 in 32.2983 msSystem.InvalidOperationException: Unable to resolve service for type 'Forum.Application.Accounts.IUserService' while attempting to activate 'Forum.API.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Forum.API.Infrastructure.Middlewares.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Infrastructure\Middlewares\RequestResponseLoggingMiddleware.cs:line 18
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-13 13:13:57.833 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/register application/json 182 - 500 - application/json 418.6029ms
+2024-04-13 13:14:30.329 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 13:14:30.507 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 13:14:30.507 +04:00  INF  Hosting environment: Development
+2024-04-13 13:14:30.507 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 13:14:30.531 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 13:14:30.796 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 13:14:30.796 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 13:14:30.824 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 294.5836ms
+2024-04-13 13:14:30.831 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 34.3645ms
+2024-04-13 13:14:30.883 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.7805ms
+2024-04-13 13:14:30.907 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 13:14:31.029 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.7236ms
+2024-04-13 13:14:36.889 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/register application/json 182
+2024-04-13 13:14:36.961 +04:00  INF  Logging request from middleware
+2024-04-13 13:14:36.966 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Account/register
+IsSeccured True
+QueryString 
+Time 4/13/2024 9:14:36 AM
+
+2024-04-13 13:14:36.967 +04:00  INF  Logging response from middleware
+2024-04-13 13:14:36.967 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/13/2024 9:14:36 AM
+
+2024-04-13 13:14:36.970 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:14:36.991 +04:00  INF  Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task Register(Forum.Application.Accounts.Requests.RegistrationRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-13 13:14:36.997 +04:00  INF  Executed action Forum.API.Controllers.AccountController.Register (Forum.API) in 1.726ms
+2024-04-13 13:14:37.001 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:14:37.038 +04:00  ERR  HTTP POST /api/Account/register responded 500 in 75.9571 msSystem.InvalidOperationException: Unable to resolve service for type 'Forum.Application.Accounts.IUserService' while attempting to activate 'Forum.API.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Forum.API.Infrastructure.Middlewares.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Infrastructure\Middlewares\RequestResponseLoggingMiddleware.cs:line 18
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-13 13:14:37.274 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/register application/json 182 - 500 - application/json 384.8854ms
+2024-04-13 13:15:09.049 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 13:15:14.200 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 13:15:14.200 +04:00  INF  Hosting environment: Development
+2024-04-13 13:15:14.200 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 13:15:14.224 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 13:15:14.463 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 241.2221ms
+2024-04-13 13:15:14.463 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 13:15:14.473 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 13:15:14.480 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 16.0820ms
+2024-04-13 13:15:14.531 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.6261ms
+2024-04-13 13:15:14.556 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 13:15:14.686 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 130.0749ms
+2024-04-13 13:15:22.491 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/register application/json 182
+2024-04-13 13:15:22.556 +04:00  INF  Logging request from middleware
+2024-04-13 13:15:22.560 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Account/register
+IsSeccured True
+QueryString 
+Time 4/13/2024 9:15:22 AM
+
+2024-04-13 13:15:22.560 +04:00  INF  Logging response from middleware
+2024-04-13 13:15:22.561 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/13/2024 9:15:22 AM
+
+2024-04-13 13:15:22.563 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:15:22.583 +04:00  INF  Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task Register(Forum.Application.Accounts.Requests.RegistrationRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-13 13:15:22.589 +04:00  INF  Executed action Forum.API.Controllers.AccountController.Register (Forum.API) in 2.0964ms
+2024-04-13 13:15:22.593 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:15:22.628 +04:00  ERR  HTTP POST /api/Account/register responded 500 in 71.4081 msSystem.InvalidOperationException: Unable to resolve service for type 'Forum.Application.Accounts.IUserService' while attempting to activate 'Forum.API.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Forum.API.Infrastructure.Middlewares.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Infrastructure\Middlewares\RequestResponseLoggingMiddleware.cs:line 18
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-13 13:15:22.825 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/register application/json 182 - 500 - application/json 334.2073ms
+2024-04-13 13:20:32.628 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 13:20:32.698 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 13:20:32.699 +04:00  INF  Hosting environment: Development
+2024-04-13 13:20:32.699 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 13:20:32.710 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 13:20:32.854 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 145.3703ms
+2024-04-13 13:20:32.857 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 13:20:32.859 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 13:20:32.861 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 3.4932ms
+2024-04-13 13:20:32.885 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.3188ms
+2024-04-13 13:20:32.919 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 13:20:33.003 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.6194ms
+2024-04-13 13:21:02.070 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/register application/json 182
+2024-04-13 13:21:02.079 +04:00  INF  Logging request from middleware
+2024-04-13 13:21:02.084 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Account/register
+IsSeccured True
+QueryString 
+Time 4/13/2024 9:21:02 AM
+
+2024-04-13 13:21:02.085 +04:00  INF  Logging response from middleware
+2024-04-13 13:21:02.085 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/13/2024 9:21:02 AM
+
+2024-04-13 13:21:02.086 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:21:02.104 +04:00  INF  Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task Register(Forum.Application.Accounts.Requests.RegistrationRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-13 13:21:02.733 +04:00  INF  Entity Framework Core 6.0.28 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-13 13:21:03.358 +04:00  INF  Executed DbCommand (40ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (DbType = Boolean), @p4='?' (Size = 50), @p5='?' (DbType = Boolean), @p6='?' (Size = 50), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [Gender], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-04-13 13:21:03.408 +04:00  INF  Executed action Forum.API.Controllers.AccountController.Register (Forum.API) in 1300.1394ms
+2024-04-13 13:21:03.408 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.Register (Forum.API)'
+2024-04-13 13:21:03.410 +04:00  INF  HTTP POST /api/Account/register responded 200 in 1330.9509 ms
+2024-04-13 13:21:03.414 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/register application/json 182 - 200 - - 1344.4046ms
+2024-04-13 13:38:28.973 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 13:38:29.036 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 13:38:29.036 +04:00  INF  Hosting environment: Development
+2024-04-13 13:38:29.036 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 13:38:29.048 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 13:38:29.180 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 133.6745ms
+2024-04-13 13:38:29.183 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 13:38:29.185 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 2.2340ms
+2024-04-13 13:38:29.186 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 13:38:29.208 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.4673ms
+2024-04-13 13:38:29.237 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 13:38:29.311 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.6762ms
+2024-04-13 13:38:38.491 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-13 13:38:38.500 +04:00  INF  Logging request from middleware
+2024-04-13 13:38:38.503 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/13/2024 9:38:38 AM
+
+2024-04-13 13:38:38.504 +04:00  INF  Logging response from middleware
+2024-04-13 13:38:38.504 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/13/2024 9:38:38 AM
+
+2024-04-13 13:38:38.505 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-13 13:38:38.521 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-13 13:38:39.345 +04:00  INF  Entity Framework Core 6.0.28 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-13 13:38:39.346 +04:00  INF  controller is executed
+2024-04-13 13:38:39.996 +04:00  INF  Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-13 13:38:40.059 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-13 13:38:40.064 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 1539.3437ms
+2024-04-13 13:38:40.064 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-13 13:38:40.066 +04:00  INF  HTTP GET /api/Comment responded 200 in 1565.9456 ms
+2024-04-13 13:38:40.068 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 1577.5055ms
+2024-04-13 16:21:48.344 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 16:21:48.510 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-13 16:21:48.510 +04:00  INF  Hosting environment: Development
+2024-04-13 16:21:48.510 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-13 16:21:48.630 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-13 16:21:48.950 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 359.7300ms
+2024-04-13 16:21:48.959 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-13 16:21:48.962 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-13 16:21:48.965 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.8563ms
+2024-04-13 16:21:49.015 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.5630ms
+2024-04-13 16:21:49.081 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-13 16:21:49.253 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 172.3230ms

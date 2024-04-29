@@ -1,0 +1,285 @@
+2024-04-22 13:57:14.966 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 13:57:15.166 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-22 13:57:15.166 +04:00  INF  Hosting environment: Development
+2024-04-22 13:57:15.166 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-22 13:57:15.192 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 13:57:15.557 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 370.0873ms
+2024-04-22 13:57:15.566 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 13:57:15.572 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.6624ms
+2024-04-22 13:57:15.588 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 13:57:15.644 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.2837ms
+2024-04-22 13:57:15.753 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 13:57:15.953 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.4511ms
+2024-04-22 13:58:29.879 +04:00  INF  Request starting HTTP/2 DELETE https://localhost:44389/api/Comment?id=4 - -
+2024-04-22 13:58:29.944 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-22 13:58:29.950 +04:00  INF  Authorization failed. These requirements were not met:
+Handler assertion should evaluate to true.
+2024-04-22 13:58:29.959 +04:00  INF  AuthenticationScheme: Identity.Application was challenged.
+2024-04-22 13:58:29.960 +04:00  INF  Request finished HTTP/2 DELETE https://localhost:44389/api/Comment?id=4 - - - 302 - - 81.1590ms
+2024-04-22 13:58:29.964 +04:00  INF  Request starting HTTP/2 DELETE https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FComment%3Fid%3D4 - -
+2024-04-22 13:58:29.966 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-22 13:58:29.970 +04:00  INF  HTTP DELETE /Account/Login responded 404 in 0.5422 ms
+2024-04-22 13:58:29.974 +04:00  INF  Request finished HTTP/2 DELETE https://localhost:44389/Account/Login?ReturnUrl=%2Fapi%2FComment%3Fid%3D4 - - - 404 - - 10.5973ms
+2024-04-22 13:58:53.453 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/login application/json 86
+2024-04-22 13:58:53.456 +04:00  INF  Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-04-22 13:58:53.460 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-22 13:58:53.500 +04:00  INF  Route matched with {action = "LogIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] LogIn(Forum.Application.Accounts.Requests.LoginRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-22 13:58:54.952 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 13:58:55.800 +04:00  INF  Executed DbCommand (70ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 13:58:56.137 +04:00  INF  Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2024-04-22 13:58:56.178 +04:00  INF  Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-22 13:58:56.191 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2024-04-22 13:58:56.214 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2024-04-22 13:58:56.221 +04:00  INF  AuthenticationScheme: Identity.Application signed in.
+2024-04-22 13:58:56.235 +04:00  INF  Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2024-04-22 13:58:56.255 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [UserRoles] AS [u]
+WHERE ([u].[UserId] = @__p_0) AND ([u].[RoleId] = @__p_1)
+2024-04-22 13:58:56.262 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 13:58:56.264 +04:00  INF  Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-22 13:58:56.351 +04:00  INF  Executing ObjectResult, writing value of type 'System.String'.
+2024-04-22 13:58:56.360 +04:00  INF  Executed action Forum.API.Controllers.AccountController.LogIn (Forum.API) in 2852.0651ms
+2024-04-22 13:58:56.361 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-22 13:58:56.361 +04:00  INF  HTTP POST /api/Account/login responded 200 in 2904.6349 ms
+2024-04-22 13:58:56.368 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/login application/json 86 - 200 - text/plain;+charset=utf-8 2914.9786ms
+2024-04-22 13:59:25.494 +04:00  INF  Request starting HTTP/2 DELETE https://localhost:44389/api/Comment?id=14 - -
+2024-04-22 13:59:25.499 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-22 13:59:25.504 +04:00  INF  Route matched with {action = "Delete", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task Delete(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-22 13:59:25.564 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 13:59:25.565 +04:00  INF  controller is executed
+2024-04-22 13:59:25.619 +04:00  INF  Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Content], [c].[Created], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+WHERE [c].[Id] = @__id_0
+2024-04-22 13:59:25.831 +04:00  INF  Executed DbCommand (6ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 200), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Comments] SET [Content] = @p0, [Created] = @p1, [IsDeleted] = @p2, [TopicId] = @p3, [UserId] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2024-04-22 13:59:25.951 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Content], [t0].[Created], [t0].[NumberOfComments], [t0].[State], [t0].[Status], [t0].[Title], [t0].[UserId], [t0].[Id0], [t0].[AccessFailedCount], [t0].[BanExpiration], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t1].[Id], [t1].[Content], [t1].[Created], [t1].[IsDeleted], [t1].[TopicId], [t1].[UserId], [t1].[Id0], [t1].[AccessFailedCount], [t1].[BanExpiration], [t1].[ConcurrencyStamp], [t1].[Email], [t1].[EmailConfirmed], [t1].[FirstName], [t1].[Gender], [t1].[LastName], [t1].[LockoutEnabled], [t1].[LockoutEnd], [t1].[NormalizedEmail], [t1].[NormalizedUserName], [t1].[PasswordHash], [t1].[PhoneNumber], [t1].[PhoneNumberConfirmed], [t1].[SecurityStamp], [t1].[TwoFactorEnabled], [t1].[UserName]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id] AS [Id0], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+    FROM [Topics] AS [t]
+    INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[Created], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[AccessFailedCount], [u0].[BanExpiration], [u0].[ConcurrencyStamp], [u0].[Email], [u0].[EmailConfirmed], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[LockoutEnabled], [u0].[LockoutEnd], [u0].[NormalizedEmail], [u0].[NormalizedUserName], [u0].[PasswordHash], [u0].[PhoneNumber], [u0].[PhoneNumberConfirmed], [u0].[SecurityStamp], [u0].[TwoFactorEnabled], [u0].[UserName]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[TopicId]
+ORDER BY [t0].[Id], [t0].[Id0], [t1].[Id]
+2024-04-22 13:59:26.002 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Topics] SET [NumberOfComments] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-04-22 13:59:26.019 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Delete (Forum.API) in 514.6805ms
+2024-04-22 13:59:26.019 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-22 13:59:26.020 +04:00  INF  HTTP DELETE /api/Comment responded 200 in 520.8586 ms
+2024-04-22 13:59:26.022 +04:00  INF  Request finished HTTP/2 DELETE https://localhost:44389/api/Comment?id=14 - - - 200 - - 528.0682ms
+2024-04-22 13:59:32.736 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-22 13:59:32.738 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-22 13:59:32.742 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-22 13:59:32.756 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 13:59:32.756 +04:00  INF  controller is executed
+2024-04-22 13:59:32.775 +04:00  INF  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[Created], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-22 13:59:32.883 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 13:59:32.903 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 160.4562ms
+2024-04-22 13:59:32.903 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-22 13:59:32.903 +04:00  INF  HTTP GET /api/Comment responded 200 in 165.0759 ms
+2024-04-22 13:59:32.904 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 167.4119ms
+2024-04-22 13:59:44.567 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment/14 - -
+2024-04-22 13:59:44.586 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Get (Forum.API)'
+2024-04-22 13:59:44.595 +04:00  INF  Route matched with {action = "Get", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Forum.Application.Comments.Responses.CommentResponseModel] Get(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-22 13:59:44.599 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 13:59:44.600 +04:00  INF  controller is executed
+2024-04-22 13:59:44.605 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Content], [c].[Created], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+WHERE [c].[Id] = @__id_0
+2024-04-22 13:59:44.607 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Get (Forum.API) in 12.5501ms
+2024-04-22 13:59:44.608 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Get (Forum.API)'
+2024-04-22 13:59:44.608 +04:00  ERR  HTTP GET /api/Comment/14 responded 500 in 22.1422 msForum.Application.Exceptions.Comments.CommentNotFound: Comment with this ID: 14 was not found!
+   at Forum.Application.Comments.CommentService.GetAsync(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Application\Comments\CommentService.cs:line 24
+   at Forum.API.Controllers.CommentController.Get(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Controllers\CommentController.cs:line 28
+   at lambda_method384(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-22 13:59:45.167 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment/14 - - - 404 - application/json 600.7036ms
+2024-04-22 14:02:07.199 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 14:02:07.355 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-22 14:02:07.356 +04:00  INF  Hosting environment: Development
+2024-04-22 14:02:07.356 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-22 14:02:07.383 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 14:02:07.649 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 270.1781ms
+2024-04-22 14:02:07.654 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 14:02:07.660 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 6.4871ms
+2024-04-22 14:02:07.661 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 14:02:07.718 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.2273ms
+2024-04-22 14:02:07.795 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 14:02:07.974 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 179.2986ms
+2024-04-22 14:02:28.981 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 14:02:29.274 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-22 14:02:29.274 +04:00  INF  Hosting environment: Development
+2024-04-22 14:02:29.274 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-22 14:02:29.314 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 14:02:29.822 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 14:02:29.824 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 14:02:29.835 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 514.6209ms
+2024-04-22 14:02:29.862 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 31.5590ms
+2024-04-22 14:02:29.963 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 138.3897ms
+2024-04-22 14:02:30.040 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 14:02:30.315 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 275.2921ms
+2024-04-22 14:03:05.069 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Account/login application/json 86
+2024-04-22 14:03:05.558 +04:00  INF  Executing endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-22 14:03:05.601 +04:00  INF  Route matched with {action = "LogIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] LogIn(Forum.Application.Accounts.Requests.LoginRequestModel, System.Threading.CancellationToken) on controller Forum.API.Controllers.AccountController (Forum.API).
+2024-04-22 14:03:16.240 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 14:03:17.826 +04:00  INF  Executed DbCommand (144ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 14:03:18.311 +04:00  INF  Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2024-04-22 14:03:18.393 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-22 14:03:18.419 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2024-04-22 14:03:18.444 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2024-04-22 14:03:18.463 +04:00  INF  AuthenticationScheme: Identity.Application signed in.
+2024-04-22 14:03:18.481 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2024-04-22 14:03:18.513 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [UserRoles] AS [u]
+WHERE ([u].[UserId] = @__p_0) AND ([u].[RoleId] = @__p_1)
+2024-04-22 14:03:18.523 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 14:03:18.526 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2024-04-22 14:03:18.672 +04:00  INF  Executing ObjectResult, writing value of type 'System.String'.
+2024-04-22 14:03:18.684 +04:00  INF  Executed action Forum.API.Controllers.AccountController.LogIn (Forum.API) in 13074.7943ms
+2024-04-22 14:03:18.688 +04:00  INF  Executed endpoint 'Forum.API.Controllers.AccountController.LogIn (Forum.API)'
+2024-04-22 14:03:18.693 +04:00  INF  HTTP POST /api/Account/login responded 200 in 13137.3405 ms
+2024-04-22 14:03:18.717 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Account/login application/json 86 - 200 - text/plain;+charset=utf-8 13647.7781ms
+2024-04-22 14:03:48.035 +04:00  INF  Request starting HTTP/2 DELETE https://localhost:44389/api/Comment?id=8 - -
+2024-04-22 14:03:48.051 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-22 14:03:48.056 +04:00  INF  Route matched with {action = "Delete", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task Delete(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-22 14:03:48.124 +04:00  INF  Entity Framework Core 6.0.29 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.29' with options: None
+2024-04-22 14:03:48.125 +04:00  INF  controller is executed
+2024-04-22 14:03:53.678 +04:00  INF  Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Content], [c].[Created], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[AccessFailedCount], [u].[BanExpiration], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+WHERE [c].[Id] = @__id_0
+2024-04-22 14:04:35.997 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Delete (Forum.API) in 47940.879ms
+2024-04-22 14:04:35.998 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-22 14:04:35.999 +04:00  ERR  HTTP DELETE /api/Comment responded 500 in 47947.8629 msForum.Application.Exceptions.Comments.CommentNotFound: Comment with this ID: 8 was not found!
+   at Forum.Application.Comments.CommentService.DeleteAsync(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Application\Comments\CommentService.cs:line 64
+   at Forum.API.Controllers.CommentController.Delete(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Controllers\CommentController.cs:line 54
+   at lambda_method169(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-22 14:04:46.892 +04:00  INF  Request finished HTTP/2 DELETE https://localhost:44389/api/Comment?id=8 - - - 404 - application/json 58856.0359ms
+2024-04-22 14:15:50.409 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 14:15:50.560 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-22 14:15:50.560 +04:00  INF  Hosting environment: Development
+2024-04-22 14:15:50.560 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-22 14:15:50.587 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 14:15:50.865 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 282.2000ms
+2024-04-22 14:15:50.870 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 14:15:50.876 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.3709ms
+2024-04-22 14:15:50.879 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 14:15:50.935 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.8165ms
+2024-04-22 14:15:51.013 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 14:15:51.186 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.2747ms
+2024-04-22 15:35:04.829 +04:00  INF  User profile is available. Using 'C:\Users\Kiuadmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 15:35:04.985 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-22 15:35:04.985 +04:00  INF  Hosting environment: Development
+2024-04-22 15:35:04.986 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-22 15:35:05.015 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 15:35:05.283 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 271.6186ms
+2024-04-22 15:35:05.286 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 15:35:05.293 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 6.8875ms
+2024-04-22 15:35:05.296 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 15:35:05.353 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.7913ms
+2024-04-22 15:35:05.434 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 15:35:05.606 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 172.7150ms
+2024-04-22 15:35:47.308 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-22 15:35:47.317 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 10.1324ms
+2024-04-22 15:35:47.345 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-22 15:35:47.345 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-22 15:35:47.347 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 1.9543ms
+2024-04-22 15:35:47.367 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.4657ms
+2024-04-22 15:35:47.534 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-22 15:35:47.548 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.2492ms

@@ -1,0 +1,93 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+@using Forum.Application.Topics;
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Forum.Application.Topics.Responses.AdminTopicResponseModel>
+@inject UserManager<Forum.Domain.Entities.User> _userManager
+
+
+<h1>Topics</h1>
+
+<form asp-controller="Topic" asp-action="SearchEmailForAdmin" method="post">
+    <div class="searchEmail">
+        <input type="text" name="searchQuery" class="searchBar" placeholder="Search by Email" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+ <div class="btn-default">
+     <a asp-action="Create" class="btn btn-primary">Add Topic</a>
+ </div>
+
+
+
+<table class="table table-hover" id="ForumIndexTable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Number of Comments</th>
+            <th>Author</th>
+            <th>Created</th>
+            <th>State</th>
+            <th>Status</th>
+            <th>Approve/Reject</th>
+            <th>Add Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Topic" asp-action="Details" asp-route-id="@t.Id">@t.Title</a>
+                </td>
+                <td>
+                    @t.Content
+                </td>
+                <td>
+                    @t.NumberOfComments
+                </td>
+                <td>
+                    @t.UserUserName
+                </td>
+                <td>
+                    @t.Created
+                </td>
+
+                   <td>
+                        @if (t.State == Forum.Application.Topics.Requests.TopicState.Show)
+                        {
+                            <span style="color: green;">@t.State</span>
+                        }
+                        else if (t.State == Forum.Application.Topics.Requests.TopicState.Hide)
+                        {
+                            <span style="color: red;">@t.State</span>
+                        }
+                        else
+                        {
+                            @t.State
+                        }
+                    </td>
+
+                    <td>
+                        @t.Status
+                    </td>
+
+                    <td>
+                        @if (t.State == Forum.Application.Topics.Requests.TopicState.Show || t.State == Forum.Application.Topics.Requests.TopicState.Hide)
+                        {
+                            <span>No action available</span>
+                        }
+                        else if (t.State == Forum.Application.Topics.Requests.TopicState.Pending)
+                        {
+                            <a asp-action="ApproveTopic" asp-route-id="@t.Id" class="btn btn-primary">Approve</a>
+                            <a asp-action="RejectTopic" asp-route-id="@t.Id" class="btn btn-danger">Reject</a>
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="Comment" asp-action="Create" asp-route-topicId="@t.Id" class="btn btn-primary">Add Comment</a>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>

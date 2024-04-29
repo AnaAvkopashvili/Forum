@@ -1,0 +1,443 @@
+2024-04-11 00:12:26.338 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-11 00:12:26.366 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-11 00:12:26.396 +04:00  INF  Hosting environment: Development
+2024-04-11 00:12:26.396 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-11 00:12:26.723 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 362.9696ms
+2024-04-11 00:12:26.728 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-11 00:12:26.730 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-11 00:12:26.747 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 18.6209ms
+2024-04-11 00:12:26.794 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.0673ms
+2024-04-11 00:12:26.854 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-11 00:12:27.012 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 157.9496ms
+2024-04-11 00:12:41.722 +04:00  INF  Request starting HTTP/2 POST https://localhost:44389/api/Comment application/json 54
+2024-04-11 00:12:41.731 +04:00  INF  Logging request from middleware
+2024-04-11 00:12:41.745 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method POST
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:12:41 PM
+
+2024-04-11 00:12:41.746 +04:00  INF  Logging response from middleware
+2024-04-11 00:12:41.746 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:12:41 PM
+
+2024-04-11 00:12:41.755 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Post (Forum.API)'
+2024-04-11 00:12:41.795 +04:00  INF  Route matched with {action = "Post", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task Post(System.Threading.CancellationToken, Forum.Application.Comments.Requests.CommentRequestPostModel) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:12:43.094 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:12:43.096 +04:00  INF  controller is executed
+2024-04-11 00:12:43.930 +04:00  INF  Executed DbCommand (65ms) [Parameters=[@p0='?' (Size = 200), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Comments] ([Content], [IsDeleted], [TopicId], [UserId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Comments]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-04-11 00:12:44.566 +04:00  INF  Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Content], [t0].[Created], [t0].[NumberOfComments], [t0].[State], [t0].[Status], [t0].[Title], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username], [t1].[Id], [t1].[Content], [t1].[IsDeleted], [t1].[TopicId], [t1].[UserId], [t1].[Id0], [t1].[Email], [t1].[FirstName], [t1].[Gender], [t1].[LastName], [t1].[Password], [t1].[Username]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id] AS [Id0], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+    FROM [Topics] AS [t]
+    INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[Email], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[Password], [u0].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[TopicId]
+ORDER BY [t0].[Id], [t0].[Id0], [t1].[Id]
+2024-04-11 00:12:44.670 +04:00  INF  Executed DbCommand (16ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Topics] SET [NumberOfComments] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2024-04-11 00:12:44.686 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Post (Forum.API) in 2883.9172ms
+2024-04-11 00:12:44.687 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Post (Forum.API)'
+2024-04-11 00:12:44.689 +04:00  INF  HTTP POST /api/Comment responded 200 in 2960.0891 ms
+2024-04-11 00:12:44.697 +04:00  INF  Request finished HTTP/2 POST https://localhost:44389/api/Comment application/json 54 - 200 - - 2974.7748ms
+2024-04-11 00:12:50.987 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-11 00:12:50.989 +04:00  INF  Logging request from middleware
+2024-04-11 00:12:50.989 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:12:50 PM
+
+2024-04-11 00:12:50.989 +04:00  INF  Logging response from middleware
+2024-04-11 00:12:50.989 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:12:50 PM
+
+2024-04-11 00:12:50.989 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:12:50.996 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:12:51.059 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:12:51.059 +04:00  INF  controller is executed
+2024-04-11 00:12:51.084 +04:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-11 00:12:51.119 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 00:12:51.123 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 126.9781ms
+2024-04-11 00:12:51.123 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:12:51.124 +04:00  INF  HTTP GET /api/Comment responded 200 in 134.8337 ms
+2024-04-11 00:12:51.124 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 137.4544ms
+2024-04-11 00:12:58.321 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic - -
+2024-04-11 00:12:58.322 +04:00  INF  Logging request from middleware
+2024-04-11 00:12:58.322 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:12:58 PM
+
+2024-04-11 00:12:58.322 +04:00  INF  Logging response from middleware
+2024-04-11 00:12:58.322 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:12:58 PM
+
+2024-04-11 00:12:58.322 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-11 00:12:58.327 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-11 00:12:58.341 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:12:58.342 +04:00  INF  controller is executed
+2024-04-11 00:12:58.377 +04:00  INF  Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username]
+FROM [Topics] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[Email], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[Password], [u0].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [u].[Id], [t0].[Id]
+2024-04-11 00:12:58.390 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 00:12:58.397 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 69.6014ms
+2024-04-11 00:12:58.397 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-11 00:12:58.397 +04:00  INF  HTTP GET /api/Topic responded 200 in 75.3146 ms
+2024-04-11 00:12:58.399 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic - - - 200 - application/json;+charset=utf-8 77.6674ms
+2024-04-11 00:13:29.785 +04:00  INF  Request starting HTTP/2 DELETE https://localhost:44389/api/Comment?id=1 - -
+2024-04-11 00:13:29.786 +04:00  INF  Logging request from middleware
+2024-04-11 00:13:29.786 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method DELETE
+Path /api/Comment
+IsSeccured True
+QueryString ?id=1
+Time 4/10/2024 8:13:29 PM
+
+2024-04-11 00:13:29.786 +04:00  INF  Logging response from middleware
+2024-04-11 00:13:29.786 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:13:29 PM
+
+2024-04-11 00:13:29.786 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-11 00:13:29.793 +04:00  INF  Route matched with {action = "Delete", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task Delete(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:13:29.799 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:13:29.800 +04:00  INF  controller is executed
+2024-04-11 00:13:29.839 +04:00  INF  Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+WHERE [c].[Id] = @__id_0
+2024-04-11 00:13:29.856 +04:00  INF  Executed DbCommand (4ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 200), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Comments] SET [Content] = @p0, [IsDeleted] = @p1, [TopicId] = @p2, [UserId] = @p3
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+2024-04-11 00:13:29.857 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Delete (Forum.API) in 63.9163ms
+2024-04-11 00:13:29.857 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Delete (Forum.API)'
+2024-04-11 00:13:29.857 +04:00  INF  HTTP DELETE /api/Comment responded 200 in 71.8832 ms
+2024-04-11 00:13:29.858 +04:00  INF  Request finished HTTP/2 DELETE https://localhost:44389/api/Comment?id=1 - - - 200 - - 72.6326ms
+2024-04-11 00:13:39.852 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-11 00:13:39.853 +04:00  INF  Logging request from middleware
+2024-04-11 00:13:39.853 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:13:39 PM
+
+2024-04-11 00:13:39.853 +04:00  INF  Logging response from middleware
+2024-04-11 00:13:39.853 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:13:39 PM
+
+2024-04-11 00:13:39.853 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:13:39.853 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:13:39.854 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:13:39.854 +04:00  INF  controller is executed
+2024-04-11 00:13:39.860 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-11 00:13:39.861 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 00:13:39.861 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 7.9706ms
+2024-04-11 00:13:39.861 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:13:39.861 +04:00  INF  HTTP GET /api/Comment responded 200 in 8.6743 ms
+2024-04-11 00:13:39.862 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 9.3732ms
+2024-04-11 00:13:45.416 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment/1 - -
+2024-04-11 00:13:45.417 +04:00  INF  Logging request from middleware
+2024-04-11 00:13:45.417 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment/1
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:13:45 PM
+
+2024-04-11 00:13:45.417 +04:00  INF  Logging response from middleware
+2024-04-11 00:13:45.417 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:13:45 PM
+
+2024-04-11 00:13:45.417 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.Get (Forum.API)'
+2024-04-11 00:13:45.426 +04:00  INF  Route matched with {action = "Get", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Forum.Application.Comments.Responses.CommentResponseModel] Get(System.Threading.CancellationToken, Int32) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:13:45.428 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:13:45.428 +04:00  INF  controller is executed
+2024-04-11 00:13:45.433 +04:00  INF  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+WHERE [c].[Id] = @__id_0
+2024-04-11 00:13:45.435 +04:00  INF  Executed action Forum.API.Controllers.CommentController.Get (Forum.API) in 8.3565ms
+2024-04-11 00:13:45.435 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.Get (Forum.API)'
+2024-04-11 00:13:45.435 +04:00  ERR  HTTP GET /api/Comment/1 responded 500 in 18.7875 msForum.Application.Exceptions.Comments.CommentNotFound: Comment with this ID: 1 was not found!
+   at Forum.Application.Comments.CommentService.GetAsync(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Application\Comments\CommentService.cs:line 25
+   at Forum.API.Controllers.CommentController.Get(CancellationToken cancellationToken, Int32 id) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Controllers\CommentController.cs:line 28
+   at lambda_method280(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Forum.API.Infrastructure.Middlewares.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Infrastructure\Middlewares\RequestResponseLoggingMiddleware.cs:line 18
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-11 00:13:45.708 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment/1 - - - 404 - application/json 291.8731ms
+2024-04-11 00:22:22.108 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-11 00:22:22.152 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-11 00:22:22.206 +04:00  INF  Hosting environment: Development
+2024-04-11 00:22:22.207 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-11 00:22:22.762 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-11 00:22:22.764 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-11 00:22:22.772 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 623.1953ms
+2024-04-11 00:22:22.790 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 23.1001ms
+2024-04-11 00:22:22.891 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 127.4573ms
+2024-04-11 00:22:22.934 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-11 00:22:23.197 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 262.9464ms
+2024-04-11 00:22:26.798 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-11 00:22:26.812 +04:00  INF  Logging request from middleware
+2024-04-11 00:22:26.823 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:22:26 PM
+
+2024-04-11 00:22:26.824 +04:00  INF  Logging response from middleware
+2024-04-11 00:22:26.824 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:22:26 PM
+
+2024-04-11 00:22:26.835 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:22:26.886 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:22:28.914 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:22:28.915 +04:00  INF  controller is executed
+2024-04-11 00:22:35.832 +04:00  INF  Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-11 00:23:06.294 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 39399.2507ms
+2024-04-11 00:23:06.298 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:23:06.589 +04:00  ERR  HTTP GET /api/Comment responded 500 in 39776.0792 msSystem.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at Forum.Application.Comments.CommentService.GetAllAsync(CancellationToken cancellationToken) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum.Application\Comments\CommentService.cs:line 37
+   at Forum.API.Controllers.CommentController.GetAll(CancellationToken cancellationToken) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Controllers\CommentController.cs:line 34
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Forum.API.Infrastructure.Middlewares.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\Infrastructure\Middlewares\RequestResponseLoggingMiddleware.cs:line 18
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+
+2024-04-11 00:25:03.102 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-11 00:25:03.137 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-11 00:25:03.165 +04:00  INF  Hosting environment: Development
+2024-04-11 00:25:03.166 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-11 00:25:03.483 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 353.0702ms
+2024-04-11 00:25:03.485 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-11 00:25:03.490 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-11 00:25:03.491 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 5.7460ms
+2024-04-11 00:25:03.553 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.4220ms
+2024-04-11 00:25:03.611 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-11 00:25:03.771 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 159.1409ms
+2024-04-11 00:25:09.288 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-11 00:25:09.296 +04:00  INF  Logging request from middleware
+2024-04-11 00:25:09.307 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/10/2024 8:25:09 PM
+
+2024-04-11 00:25:09.309 +04:00  INF  Logging response from middleware
+2024-04-11 00:25:09.309 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/10/2024 8:25:09 PM
+
+2024-04-11 00:25:09.318 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:25:09.359 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 00:25:10.689 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 00:25:10.690 +04:00  INF  controller is executed
+2024-04-11 00:25:11.565 +04:00  INF  Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-11 00:25:11.828 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 00:25:11.841 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 2474.1532ms
+2024-04-11 00:25:11.843 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 00:25:11.845 +04:00  INF  HTTP GET /api/Comment responded 200 in 2550.9032 ms
+2024-04-11 00:25:11.852 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 2564.2611ms
+2024-04-11 12:25:23.126 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-04-11 12:25:23.274 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/index.html - -
+2024-04-11 12:25:23.283 +04:00  INF  Hosting environment: Development
+2024-04-11 12:25:23.284 +04:00  INF  Content root path: C:\Users\Kiuadmin\source\repos\AnaAvkopashvili\Forum\Forum\Forum\
+2024-04-11 12:25:24.147 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - -
+2024-04-11 12:25:24.151 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/index.html - - - 200 - text/html;charset=utf-8 884.5282ms
+2024-04-11 12:25:24.167 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_framework/aspnetcore-browser-refresh.js - - - 200 13754 application/javascript;+charset=utf-8 10.6577ms
+2024-04-11 12:25:24.178 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/_vs/browserLink - -
+2024-04-11 12:25:24.315 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 137.4616ms
+2024-04-11 12:25:24.362 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - -
+2024-04-11 12:25:24.634 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 271.8921ms
+2024-04-11 12:25:27.703 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Comment - -
+2024-04-11 12:25:27.716 +04:00  INF  Logging request from middleware
+2024-04-11 12:25:27.727 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Comment
+IsSeccured True
+QueryString 
+Time 4/11/2024 8:25:27 AM
+
+2024-04-11 12:25:27.729 +04:00  INF  Logging response from middleware
+2024-04-11 12:25:27.729 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/11/2024 8:25:27 AM
+
+2024-04-11 12:25:27.740 +04:00  INF  Executing endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 12:25:27.800 +04:00  INF  Route matched with {action = "GetAll", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Comments.Responses.CommentResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.CommentController (Forum.API).
+2024-04-11 12:25:30.075 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 12:25:30.077 +04:00  INF  controller is executed
+2024-04-11 12:25:35.635 +04:00  INF  Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Comments] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[UserId] = [u].[Id]
+2024-04-11 12:25:36.062 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Comments.Responses.CommentResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 12:25:36.078 +04:00  INF  Executed action Forum.API.Controllers.CommentController.GetAll (Forum.API) in 8269.2178ms
+2024-04-11 12:25:36.081 +04:00  INF  Executed endpoint 'Forum.API.Controllers.CommentController.GetAll (Forum.API)'
+2024-04-11 12:25:36.087 +04:00  INF  HTTP GET /api/Comment responded 200 in 8371.0164 ms
+2024-04-11 12:25:36.103 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Comment - - - 200 - application/json;+charset=utf-8 8400.3231ms
+2024-04-11 12:25:46.071 +04:00  INF  Request starting HTTP/2 GET https://localhost:44389/api/Topic - -
+2024-04-11 12:25:46.073 +04:00  INF  Logging request from middleware
+2024-04-11 12:25:46.079 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Address https
+Method GET
+Path /api/Topic
+IsSeccured True
+QueryString 
+Time 4/11/2024 8:25:46 AM
+
+2024-04-11 12:25:46.079 +04:00  INF  Logging response from middleware
+2024-04-11 12:25:46.080 +04:00  INF  
+ logged from middleware 
+IP: ::1
+Body Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream
+Status 200
+Time 4/11/2024 8:25:46 AM
+
+2024-04-11 12:25:46.080 +04:00  INF  Executing endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-11 12:25:46.087 +04:00  INF  Route matched with {action = "GetAll", controller = "Topic"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Forum.Application.Topics.Responses.TopicResponseModel]] GetAll(System.Threading.CancellationToken) on controller Forum.API.Controllers.TopicController (Forum.API).
+2024-04-11 12:25:46.150 +04:00  INF  Entity Framework Core 6.0.28 initialized 'ForumContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-04-11 12:25:46.151 +04:00  INF  controller is executed
+2024-04-11 12:25:49.101 +04:00  INF  Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[Created], [t].[NumberOfComments], [t].[State], [t].[Status], [t].[Title], [t].[UserId], [u].[Id], [u].[Email], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[Password], [u].[Username], [t0].[Id], [t0].[Content], [t0].[IsDeleted], [t0].[TopicId], [t0].[UserId], [t0].[Id0], [t0].[Email], [t0].[FirstName], [t0].[Gender], [t0].[LastName], [t0].[Password], [t0].[Username]
+FROM [Topics] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[IsDeleted], [c].[TopicId], [c].[UserId], [u0].[Id] AS [Id0], [u0].[Email], [u0].[FirstName], [u0].[Gender], [u0].[LastName], [u0].[Password], [u0].[Username]
+    FROM [Comments] AS [c]
+    INNER JOIN [Users] AS [u0] ON [c].[UserId] = [u0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[TopicId]
+ORDER BY [t].[Id], [u].[Id], [t0].[Id]
+2024-04-11 12:25:49.183 +04:00  INF  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Forum.Application.Topics.Responses.TopicResponseModel, Forum.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-11 12:25:49.193 +04:00  INF  Executed action Forum.API.Controllers.TopicController.GetAll (Forum.API) in 3105.5063ms
+2024-04-11 12:25:49.193 +04:00  INF  Executed endpoint 'Forum.API.Controllers.TopicController.GetAll (Forum.API)'
+2024-04-11 12:25:49.193 +04:00  INF  HTTP GET /api/Topic responded 200 in 3120.1616 ms
+2024-04-11 12:25:49.199 +04:00  INF  Request finished HTTP/2 GET https://localhost:44389/api/Topic - - - 200 - application/json;+charset=utf-8 3128.6411ms
